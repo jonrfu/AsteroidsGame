@@ -1,6 +1,6 @@
 Spaceship J;
 public void settings() {
-  size(300, 300);
+  size(500, 500);
 }
 public void setup() 
 {
@@ -11,4 +11,7 @@ public void draw()
   J= new Spaceship();
   J.show();
 }
-
+public void keyPressed()
+{
+  
+}
