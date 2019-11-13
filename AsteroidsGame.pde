@@ -20,5 +20,8 @@ public void draw()
 }
 public void keyPressed()
 {
-  
+  if(key=='h')
+  {
+  bob.setDirectionX(0);
+  }
 }
