@@ -10,18 +10,41 @@ public void setup()
    for(int i = 0; i<S.length;i++){
    S[i]= new Star();
    S[i].show();
- }
 
+ }
+     J= new Spaceship();
 }
 public void draw() 
 {
-  J= new Spaceship();
+    background(0);
+   for(int i = 0; i<S.length;i++){
+
+   S[i].show();
+   }
   J.show();
+  J.move();
+
 }
 public void keyPressed()
 {
+  if(key=='w')
+  {
+    
+    J.accelerate(1);
+  }
+  if(key=='a')
+  {
+    J.turn(-25);
+  }
+  if(key=='d')
+  {
+   J.turn(25);    
+  }
   if(key=='h')
   {
-  bob.setDirectionX(0);
+  J.setDirectionX(0);
+  J.setDirectionY(0);
+  J.setCenterX((int)(Math.random()*400));
+  J.setCenterY((int)(Math.random()*400));
   }
 }
