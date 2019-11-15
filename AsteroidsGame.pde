@@ -31,7 +31,7 @@ public void keyPressed()
   if(key=='w')
   {
     
-    J.accelerate(1);
+    J.accelerate(0.5);
   }
   if(key=='a')
   {
