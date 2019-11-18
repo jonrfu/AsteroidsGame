@@ -47,6 +47,6 @@ public void keyPressed()
   J.setDirectionY(0);
   J.setCenterX((int)(Math.random()*400));
   J.setCenterY((int)(Math.random()*400));
-  J.setPointDirection((float)(Math.random()*2*PI));
+  J.setPointDirection((float)(Math.random()*360));
   }
 }
