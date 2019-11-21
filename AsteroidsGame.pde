@@ -1,11 +1,11 @@
 Spaceship J;
 Star[] S;
+ArrayList<Asteroid> A;
 public void settings() {
   size(500, 500);
 }
 public void setup() 
 {
-size(500, 500);
   background(0);
   S= new Star[100];
    for(int i = 0; i<S.length;i++){
@@ -13,7 +13,13 @@ size(500, 500);
    S[i].show();
 
  }
-     J= new Spaceship();
+ 
+   J= new Spaceship();
+ A= new ArrayList<Asteroid>();
+       for(int i = 0; i<20;i++){
+   A.add(new Asteroid());
+   A.get(i).show();
+       }
 }
 public void draw() 
 {
@@ -22,6 +28,11 @@ public void draw()
 
    S[i].show();
    }
+  for(int z = 0; z<A.size();z++){
+   A.get(z).show();
+   A.get(z).spin();
+   A.get(z).move();
+    }
   J.show();
   J.move();
 
@@ -31,7 +42,7 @@ public void keyPressed()
   if(key=='w')
   {
     
-    J.accelerate(0.5);
+    J.accelerate(1);
   }
   if(key=='a')
   {
