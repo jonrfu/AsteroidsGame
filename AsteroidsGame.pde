@@ -1,11 +1,10 @@
 Spaceship J;
 Star[] S;
 ArrayList<Asteroid> A;
-public void settings() {
-  size(500, 500);
-}
+
 public void setup() 
 {
+  size(500, 500);
   background(0);
   S= new Star[100];
    for(int i = 0; i<S.length;i++){
