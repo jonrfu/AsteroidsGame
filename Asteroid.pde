@@ -5,18 +5,18 @@ class Asteroid extends Floater{
       xCorners=new int[corners];
       yCorners=new int[corners];
       xCorners[0]=0;
-      yCorners[0]=-8;
+      yCorners[0]=-12;
       xCorners[1]=4;
       yCorners[1]=-4;
-      xCorners[2]=8;
+      xCorners[2]=12;
       yCorners[2]=0;
       xCorners[3]=4;
       yCorners[3]=4;
       xCorners[4]=0;
-      yCorners[4]=8;
+      yCorners[4]=12;
       xCorners[5]=-4;
       yCorners[5]=4;
-      xCorners[6]=-8;
+      xCorners[6]=-12;
       yCorners[6]=0;
       xCorners[7]=-4;
       yCorners[7]=-4;
@@ -25,29 +25,17 @@ class Asteroid extends Floater{
       myCenterY=(int)(Math.random()*500);
          myDirectionX=(int)(Math.random()*6)-3;
    myDirectionY=(int)(Math.random()*6)-3;
-      myPointDirection=(int)(Math.random()*360);
+      myPointDirection=(int)(Math.random()*300)+60;
       rotateSpeed= Math.random()*8-4;
   }
 
 public void spin(){
   myPointDirection+=rotateSpeed;
 }
+public float getCenterX(){
+     return (float)myCenterX;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public float getCenterY(){
+     return (float)myCenterY;
+}
+}
