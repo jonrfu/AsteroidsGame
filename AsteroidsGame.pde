@@ -1,10 +1,12 @@
 Spaceship J;
 Star[] S;
 ArrayList<Asteroid> A;
-
+public void settings() {
+  size(500, 500);
+}
 public void setup() 
 {
-  size(500, 500);
+  size(500,500);
   background(0);
   S= new Star[100];
    for(int i = 0; i<S.length;i++){
@@ -17,7 +19,12 @@ public void setup()
  A= new ArrayList<Asteroid>();
        for(int i = 0; i<20;i++){
    A.add(new Asteroid());
+   if(dist(J.getCenterX(),J.getCenterX(),J.getCenterX(),J.getCenterX())>20){
    A.get(i).show();
+       }else{
+         
+       }
+       
        }
 }
 public void draw() 
@@ -28,9 +35,14 @@ public void draw()
    S[i].show();
    }
   for(int z = 0; z<A.size();z++){
+       if(dist(J.getCenterX(),J.getCenterY(),A.get(z).getCenterX(),A.get(z).getCenterY())>20){
    A.get(z).show();
-   A.get(z).spin();
+      A.get(z).spin();
    A.get(z).move();
+       }else{
+     A.remove(z);
+       }
+
     }
   J.show();
   J.move();
