@@ -1,6 +1,7 @@
 Spaceship J;
 Star[] S;
 ArrayList<Asteroid> A;
+ArrayList<Bullet>B;
 public void settings() {
   size(500, 500);
 }
@@ -14,7 +15,7 @@ public void setup()
    S[i].show();
 
  }
- 
+ B=new ArrayList<Bullet>();
    J= new Spaceship();
  A= new ArrayList<Asteroid>();
        for(int i = 0; i<20;i++){
@@ -44,6 +45,18 @@ public void draw()
        }
 
     }
+  for(int b = 0;b<B.size();b++){
+    B.get(b).show();
+    B.get(b).move();
+  }
+  for(int z = 0; z<A.size();z++){
+      for(int b = 0;b<B.size();b++){
+       if(dist(B.get(b).getCenterX(),J.getCenterY(),A.get(z).getCenterX(),A.get(z).getCenterY())<20){
+         A.remove(z);
+         break;
+       }
+      }
+  }
   J.show();
   J.move();
 
@@ -70,5 +83,9 @@ public void keyPressed()
   J.setCenterX((int)(Math.random()*400));
   J.setCenterY((int)(Math.random()*400));
   J.setPointDirection((float)(Math.random()*360));
+  }
+  if(key=='j'){
+    B.add(new Bullet());
+    B.get(0).accelerate(50);
   }
 }
