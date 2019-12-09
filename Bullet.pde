@@ -19,4 +19,10 @@ class Bullet extends Floater{
    public float getCenterY(){
      return (float)myCenterY;
 }
+  public void move ()   
+  {      
+     
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;   
+  }
 }
