@@ -2,9 +2,6 @@ Spaceship J;
 Star[] S;
 ArrayList<Asteroid> A;
 ArrayList<Bullet>B;
-public void settings() {
-  size(500, 500);
-}
 public void setup() 
 {
   size(500,500);
@@ -51,7 +48,7 @@ public void draw()
   }
   for(int z = 0; z<A.size();z++){
       for(int b = 0;b<B.size();b++){
-       if(dist(B.get(b).getCenterX(),J.getCenterY(),A.get(z).getCenterX(),A.get(z).getCenterY())<20){
+       if(dist(B.get(b).getCenterX(),B.get(b).getCenterY(),A.get(z).getCenterX(),A.get(z).getCenterY())<20){
          A.remove(z);
          break;
        }
