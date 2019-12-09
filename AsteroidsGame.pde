@@ -1,7 +1,7 @@
 Spaceship J;
 Star[] S;
 ArrayList<Asteroid> A;
-ArrayList<Bullet>B;
+ArrayList<Bullet> B;
 public void setup() 
 {
   size(500,500);
@@ -12,7 +12,7 @@ public void setup()
    S[i].show();
 
  }
- B=new ArrayList<Bullet>();
+ B= new ArrayList<Bullet>();
    J= new Spaceship();
  A= new ArrayList<Asteroid>();
        for(int i = 0; i<20;i++){
